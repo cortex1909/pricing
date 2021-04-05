@@ -1,0 +1,179 @@
+$gradienttop: hsl(236, 72%, 79%);
+$gradientbottom: hsl(237, 63%, 64%);
+$lightblue: hsl(240, 78%, 98%);
+$grayblue: hsl(233, 13%, 49%);
+$darkblue: hsl(232, 13%, 33%);
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    margin: auto;
+    background-image: url(./images/bg-top.svg), url(./images/bg-bottom.svg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: right 35vw bottom 0vh, left 35vw top 0vh;
+    width: 425px;
+    font-size: 15px;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+.header {
+    margin: auto;
+    margin-top: 50px;
+
+    h1 {
+        color: $darkblue;
+    }
+}
+
+.cards {
+    margin-top: 50px;
+
+    .card {
+        background-color: #fff;
+        padding: 30px;
+        margin: 30px;
+        border-radius: 8px;
+        box-shadow: 0px 0px 5px 0px rgba(85, 85, 85, 0.31);
+
+        h4.title {
+            color: $darkblue;
+            margin: 15px 0;
+        }
+
+        h1.price {
+            font-size: 2.5rem;
+            padding: 10px;
+            border-bottom: 1px solid $grayblue;
+        }
+
+        h4.info {
+            color: $darkblue;
+            padding: 10px 0;
+            border-bottom: 1px solid $grayblue;
+        }
+
+        button#learn-more {
+            width: 100%;
+            margin-top: 25px;
+            padding: 15px 0;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient($gradienttop, $gradientbottom);
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+        }
+
+        &:nth-child(2) {
+            background: linear-gradient($gradienttop, $gradientbottom);
+            color: white;
+
+            h4.title {
+                color: white;
+            }
+
+            h1.price {
+                border-bottom: 1px solid white;
+            }
+
+            h4.info {
+                color: white;
+                border-bottom: 1px solid white;
+            }
+
+            button#learn-more {
+                color: $gradientbottom;
+                background: #fff;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*Simple css to style it like a toggle switch*/
+.theme-switch-wrapper {
+    margin: auto;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 25px;
+
+    em {
+        margin-left: 10px;
+        font-size: 1rem;
+    }
+
+    .switch {
+        margin: 0 10px;
+        color: $grayblue
+    }
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    background-color: #ccc;
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+}
+
+.slider:before {
+    background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+}
+
+input:checked+.slider {
+    background: linear-gradient($gradienttop, $gradientbottom);
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
